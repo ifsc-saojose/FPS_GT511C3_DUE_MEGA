@@ -1,5 +1,5 @@
 # FPS_GT511C3_DUE_MEGA
-FPS_GT511C3 Library of Biometric Shield for Arduino adapted to Arduino DUE and Arduino Mega.
+FPS_GT511C3 Library of Biometric Shield for Arduino. Adapted to Arduino DUE and Arduino Mega.
 
 The original FPS_GT511C3 lib was developed for Arduino Uno, it originally uses "SoftwareSerial.h" which is an emulation of an USART due Arduino Uno has only one on chip USART which is necessary for USB communication with programming IDE.
 
