@@ -6,5 +6,7 @@ The original FPS_GT511C3 lib was developed for Arduino Uno, it originally uses "
 In case o Arduino DUE and MEGA, there are more than one on chip USART, so, it is not necessary any emulation. The emulation provided by "SoftwareSerial.h" lib is also limited to low clock frequencies (max 20 MHz) which is not compatible with DUE or MEGA that use to be faster.
 
 By
+
 Daniel Trevisan Tatsch
+
 Cleber Jorge Amaral
