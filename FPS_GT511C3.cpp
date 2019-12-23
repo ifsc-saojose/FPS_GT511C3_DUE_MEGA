@@ -719,6 +719,7 @@ bool FPS_GT511C3::CaptureFinger(bool highquality)
 void FPS_GT511C3::SendCommand(byte cmd[], int length)
 {
 	Serial1.write(cmd, length);
+	delay(50);
 	if (UseSerialDebug)
 	{
 		Serial.print("FPS - SEND: ");
@@ -733,14 +734,14 @@ Response_Packet* FPS_GT511C3::GetResponse()
 	byte firstbyte = 0;
 	bool done = false;
 	//Serial1.listen();
-	Serial.print("FPS - GetResponse");
+	if (UseSerialDebug) Serial.print("FPS - GetResponse");
 	while (done == false)
 	{
 		firstbyte = (byte)Serial1.read();
 		if (firstbyte == Response_Packet::COMMAND_START_CODE_1)
 		{
 			done = true;
-			Serial.print("FPS - GetResponse done");
+			if (UseSerialDebug) Serial.print("FPS - GetResponse done");
 		}
 	}
 	byte* resp = new byte[12];
@@ -752,6 +753,7 @@ Response_Packet* FPS_GT511C3::GetResponse()
 	}
 	Response_Packet* rp = new Response_Packet(resp, UseSerialDebug);
 	delete resp;
+	delay(50);
 	if (UseSerialDebug)
 	{
 		Serial.print("FPS - RECV: ");
